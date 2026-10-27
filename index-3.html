@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09101f">
+<title>TaskNova Ads — Telegram Mini App</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<!-- GigaPub SDK: replace 8858 if GigaPub provides a different SDK Project ID -->
+<script src="https://ad.gigapub.tech/script?id=8858"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09101f;--panel:#111b30;--panel2:#182642;--line:#2a3956;--text:#f4f7ff;--muted:#9aabc9;--cyan:#58e0d0;--blue:#6485ff;--purple:#aa7cff;--green:#56d6a0;--gold:#ffd36c;--red:#ff8196}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 8% 0%,#202e5c 0,transparent 34%),var(--bg);color:var(--text);font-family:'Hind Siliguri',Inter,sans-serif;min-height:100vh}button{font:inherit;cursor:pointer;border:0}.app{max-width:490px;margin:auto;padding:17px 15px calc(94px + env(safe-area-inset-bottom));min-height:100vh}.top{display:flex;align-items:center;justify-content:space-between;margin:4px 0 21px}.brand{display:flex;gap:10px;align-items:center}.logo{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:grid;place-items:center;color:#081323;font-size:23px;font-weight:800;box-shadow:0 8px 25px #56e0d033}.brand h1{font-size:19px;margin:0;line-height:1.15}.brand small{display:block;color:var(--muted);font:10px Inter,sans-serif;letter-spacing:1px;margin-top:4px}.user{border:1px solid var(--line);background:var(--panel);border-radius:13px;padding:9px 10px;color:white;font-size:12px;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hero{background:linear-gradient(135deg,#243b70,#49317c 72%,#673b8e);border:1px solid #7784c966;border-radius:24px;padding:21px;position:relative;overflow:hidden}.hero:after{content:"▶";position:absolute;right:12px;top:1px;font-size:100px;color:#ffffff0d;font-weight:800;pointer-events:none}.eyebrow{font-size:12px;color:#dce5ff;position:relative;z-index:1}.hero h2{font-size:25px;line-height:1.35;margin:10px 0 7px;position:relative;z-index:1}.hero p{font-size:12px;line-height:1.75;color:#e0e6ff;margin:0 0 17px;position:relative;z-index:1}.primary{width:100%;background:var(--cyan);color:#071522;border-radius:13px;padding:13px 16px;font-weight:700;position:relative;z-index:1}.primary:disabled{opacity:.55;cursor:not-allowed}.section-head{display:flex;align-items:center;justify-content:space-between;margin:23px 2px 12px}.section-head h3{font-size:17px;margin:0}.tag{font-size:10px;color:var(--green);background:#163d38;border-radius:99px;padding:6px 9px}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat,.adcard,.notice,.history{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px}.stat span{font-size:11px;color:var(--muted)}.stat strong{display:block;font:700 19px Inter,sans-serif;margin-top:8px}.adcard{display:flex;align-items:center;gap:12px}.adicon{width:45px;height:45px;flex-shrink:0;border-radius:14px;background:var(--panel2);display:grid;place-items:center;font-size:22px}.adtext{flex:1;min-width:0}.adtext strong{display:block;font-size:14px}.adtext small{display:block;color:var(--muted);font-size:11px;margin-top:3px;line-height:1.5}.status{color:var(--gold);font-size:10px;margin-top:5px}.secondary{background:#263b62;color:#eaf0ff;border-radius:10px;padding:9px 12px;font-size:11px;font-weight:700;white-space:nowrap}.notice{font-size:11px;line-height:1.75;color:var(--muted);margin-top:15px}.notice strong{color:#dce5ff}.page{display:none}.page.active{display:block}.history{font-size:12px;line-height:1.9;color:#c5d1e9;white-space:pre-line;overflow-wrap:anywhere}.footer{text-align:center;color:#667999;font-size:10px;margin-top:23px}.bottom{position:fixed;z-index:5;bottom:0;left:50%;transform:translateX(-50%);width:min(490px,100%);padding:9px 12px calc(9px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(3,1fr);background:#0b1425ed;border-top:1px solid var(--line);backdrop-filter:blur(14px)}.bottom button{background:transparent;color:var(--muted);font-size:11px;padding:8px}.bottom button.active{color:var(--cyan)}.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);z-index:10;max-width:calc(100% - 30px);background:#e8fff8;color:#09221f;padding:11px 15px;border-radius:11px;font-size:12px;font-weight:600;text-align:center;box-shadow:0 8px 25px #0004}
+@media(min-width:520px){body{padding:12px 0}.app{border:1px solid #1a2943;border-radius:25px;background:#09101f;min-height:calc(100vh - 24px)}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="brand"><div class="logo">▶</div><div><h1>TaskNova Ads</h1><small>TELEGRAM MINI APP</small></div></div>
+ <div class="user" id="userName">👤 অতিথি</div>
+</header>
+<main>
+ <section class="page active" id="homePage">
+  <div class="hero">
+   <div class="eyebrow">📺 GigaPub · Rewarded Ads</div>
+   <h2>বিজ্ঞাপন দেখুন<br>অ্যাপটি উপভোগ করুন</h2>
+   <p>বিজ্ঞাপন চালু করতে নিচের বাটনে চাপ দিন। বিজ্ঞাপন নেটওয়ার্কের প্রাপ্যতা ও অনুমোদনের ওপর বিজ্ঞাপন দেখা নির্ভর করে।</p>
+   <button class="primary" id="watchMain" onclick="watchAd()">▶ বিজ্ঞাপন দেখুন</button>
+  </div>
+  <div class="section-head"><h3>আপনার সেশন</h3><span class="tag">● Mini App</span></div>
+  <div class="stats">
+   <div class="stat"><span>বিজ্ঞাপন কলের চেষ্টা</span><strong id="attempts">0</strong></div>
+   <div class="stat"><span>SDK কল সফল</span><strong id="successes">0</strong></div>
+  </div>
+  <div class="section-head"><h3>বিজ্ঞাপনের তালিকা</h3><span style="font-size:11px;color:var(--muted)">GigaPub SDK</span></div>
+  <div class="adcard"><div class="adicon">🎬</div><div class="adtext"><strong>Rewarded Advertisement</strong><small>SDK থেকে বিজ্ঞাপন অনুরোধ করা হবে।</small><div class="status" id="adStatus">● প্রস্তুত</div></div><button class="secondary" id="watchSmall" onclick="watchAd()">দেখুন</button></div>
+  <div class="notice"><strong>মনে রাখুন:</strong> SDK কল সফল হওয়া মানেই পেইড ইমপ্রেশন বা পুরস্কার নিশ্চিত নয়। এই পেজে বাস্তব আয়/ব্যালেন্স তৈরি করা হয় না। প্রকৃত রিওয়ার্ড দিতে হলে GigaPub-এর নীতিমালা অনুযায়ী সার্ভার-সাইড যাচাই যুক্ত করুন।</div>
+ </section>
+ <section class="page" id="historyPage">
+  <div class="section-head"><h3>📋 সেশন হিস্ট্রি</h3></div>
+  <div class="history" id="historyList">এখনো কোনো বিজ্ঞাপন কল করা হয়নি।</div>
+ </section>
+ <section class="page" id="profilePage">
+  <div class="section-head"><h3>👤 Telegram প্রোফাইল</h3></div>
+  <div class="adcard"><div class="adicon">👤</div><div class="adtext"><strong id="profileName">অতিথি ব্যবহারকারী</strong><small id="profileId">Telegram user পাওয়া যায়নি</small></div></div>
+  <div class="notice">Telegram ব্যবহারকারীর পরিচয় দেখানোর জন্য initDataUnsafe ব্যবহার করা হয়েছে। রিওয়ার্ড, পেমেন্ট বা অ্যাকাউন্ট পরিবর্তনের আগে backend-এ Telegram WebApp initData যাচাই করুন।</div>
+ </section>
+</main>
+<div class="footer">TaskNova Ads · GigaPub SDK integration demo</div>
+</div>
+<nav class="bottom" aria-label="Navigation">
+ <button class="active" data-page="homePage" onclick="go('homePage',this)">⌂ হোম</button>
+ <button data-page="historyPage" onclick="go('historyPage',this)">▤ ইতিহাস</button>
+ <button data-page="profilePage" onclick="go('profilePage',this)">◉ প্রোফাইল</button>
+</nav>
+<div id="toastRoot" aria-live="polite"></div>
+<script>
+(() => {
+ const tg=window.Telegram?.WebApp;
+ if(tg){try{tg.ready();tg.expand();}catch(e){}}
+ let attempts=0,successes=0,busy=false;
+ const logs=[];const $=id=>document.getElementById(id);
+ const user=tg?.initDataUnsafe?.user;
+ if(user){
+  const name=[user.first_name,user.last_name].filter(Boolean).join(' ')||'Telegram ব্যবহারকারী';
+  $('userName').textContent='👤 '+name;
+  $('profileName').textContent=name;
+  $('profileId').textContent=user.username?'@'+user.username:'Telegram profile';
+ }
+ window.go=(id,btn)=>{
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));
+  document.querySelectorAll('.bottom button').forEach(b=>b.classList.toggle('active',b===btn));
+ };
+ function toast(message){
+  const root=$('toastRoot');root.innerHTML='';
+  const node=document.createElement('div');node.className='toast';node.textContent=message;root.appendChild(node);
+  setTimeout(()=>{if(node.isConnected)node.remove()},3200);
+ }
+ function log(message){
+  logs.unshift(new Date().toLocaleTimeString()+' — '+message);
+  $('historyList').textContent=logs.join('\n');
+ }
+ window.watchAd=async()=>{
+  if(busy)return;
+  if(!tg){toast('Telegram Mini App-এর ভেতর থেকে খুলে পরীক্ষা করুন।');return;}
+  if(typeof window.showGiga!=='function'){
+   $('adStatus').textContent='● SDK পাওয়া যায়নি';
+   toast('GigaPub SDK লোড হয়নি। Application ID/Project ID ও SDK URL যাচাই করুন।');
+   log('SDK unavailable');return;
+  }
+  busy=true;attempts++;$('attempts').textContent=attempts;
+  $('watchMain').disabled=true;$('watchSmall').disabled=true;
+  $('watchMain').textContent='বিজ্ঞাপন লোড হচ্ছে…';$('adStatus').textContent='● লোড হচ্ছে';
+  try{
+   await window.showGiga();
+   successes++;$('successes').textContent=successes;
+   $('adStatus').textContent='● SDK Promise resolved';
+   log('showGiga() Promise resolved');
+   toast('SDK কল সম্পন্ন। প্রকৃত বিজ্ঞাপন/রিওয়ার্ড আলাদাভাবে যাচাই করতে হবে।');
+  }catch(error){
+   console.error('GigaPub SDK error',error);
+   $('adStatus').textContent='● বিজ্ঞাপন পাওয়া যায়নি';
+   log('Ad unavailable or SDK error');
+   toast('বিজ্ঞাপন পাওয়া যায়নি। SDK ID ও GigaPub account পরীক্ষা করুন।');
+  }finally{
+   busy=false;$('watchMain').disabled=false;$('watchSmall').disabled=false;
+   $('watchMain').textContent='▶ বিজ্ঞাপন দেখুন';
+  }
+ };
+})();
+</script>
+</body>
+</html>
